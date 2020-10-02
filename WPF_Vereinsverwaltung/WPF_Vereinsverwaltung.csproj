@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WPF_Vereinsverwaltung.Model\WPF_Vereinsverwaltung.Model.csproj" />
+  </ItemGroup>
+
 </Project>

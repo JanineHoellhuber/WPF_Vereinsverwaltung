@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_Vereinsverwaltung.Model;
 
 namespace WPF_Vereinsverwaltung
 {
@@ -20,9 +21,20 @@ namespace WPF_Vereinsverwaltung
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Mitglieder> _mitglieder;
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Repository repo = Repository.GetInstance();
+            _mitglieder = repo.GetAllMitglieder();
+            lbxMitglieder.ItemsSource = _mitglieder;
+
+            
         }
     }
 }
