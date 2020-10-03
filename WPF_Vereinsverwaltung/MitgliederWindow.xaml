@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPF_Vereinsverwaltung.MitgliederWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Vereinsverwaltung"
+        mc:Ignorable="d"
+        Title="MitgliederWindow" Height="200" Width="330">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Margin="0,10,0,20">Neues Mitglied anlegen oder bearbeiten</TextBlock>
+
+        <Grid Name="grdCdFields" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+
+            <Label Grid.Column="0" Grid.Row="0">Vorname</Label>
+            <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Path=Firstname}"></TextBox>
+
+            <Label Grid.Column="0" Grid.Row="1">Nachname</Label>
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=Lastname}"></TextBox>
+
+            <Label Grid.Column="0" Grid.Row="2">Geburtsdatum</Label>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=Birthdate}"></TextBox>
+
+            <Label Grid.Column="0" Grid.Row="3">Abzeichen</Label>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=AchievementBadge}"></TextBox>
+        </Grid>
+
+        <UniformGrid Grid.Row="2" Rows="1">
+            <Button x:Name="btnSave" Content="Save"/>
+            <Button x:Name="btnCancel" Content="Abbrechen"/>
+        </UniformGrid>
+    </Grid>
+</Window>

@@ -1,10 +1,10 @@
-Firstname;Lastname;Birthdate;;;;
-Max;Mustermann;06.09.1999;;;;
-Hubert;Maier;07.04.1970;;;;
-Susi;Steiner;02.06.1986;;;;
-Tanja ;Hauser;01.03.2000;;;;
-Tom;Hofer;05.03.2001;;;;
-Lisa;Berger;04.12.1995;;;;
+Firstname;Lastname;Birthdate;AchievementBadge;;;
+Max;Mustermann;06.09.1999;Gold_C_Diamanten;;;
+Hubert;Maier;07.04.1970;Gold_C;;;
+Susi;Steiner;02.06.1986;Silber_C;;;
+Tanja ;Hauser;01.03.2000;Silber_C;;;
+Tom;Hofer;05.03.2001;Gold_C;;;
+Lisa;Berger;04.12.1995;Gold_C_Diamanten;;;
 ;;;;;;
 ;;;;;;
 ;;;;;;

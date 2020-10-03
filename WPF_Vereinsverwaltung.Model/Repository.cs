@@ -38,7 +38,8 @@ namespace WPF_Vereinsverwaltung.Model
                 {
                     Firstname = line[0],
                     Lastname = line[1],
-                    Birthdate = Convert.ToDateTime(line[2])
+                    Birthdate = Convert.ToDateTime(line[2]),
+                    AchievementBadge = line[3]
 
                 }).ToList();
         }

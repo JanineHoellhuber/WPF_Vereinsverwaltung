@@ -34,7 +34,53 @@ namespace WPF_Vereinsverwaltung
             _mitglieder = repo.GetAllMitglieder();
             lbxMitglieder.ItemsSource = _mitglieder;
 
-            
+            btnnew.Click += BtnNew_Click;
+            btndelete.Click += BtnDelete_Click;
+            btnEdit.Click += BtnEdit_Click;
+
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Mitglieder selecedMitglied = lbxMitglieder.SelectedItem as Mitglieder;
+            if (selecedMitglied == null)
+            {
+                MessageBox.Show("Sie müssen eine Mitglied ausgewählt haben!");
+                return;
+            }
+            MitgliederWindow cdWindow = new MitgliederWindow(selecedMitglied);
+            cdWindow.ShowDialog();
+
+            Repository repository = Repository.GetInstance();
+            _mitglieder = repository.GetAllMitglieder();
+            lbxMitglieder.ItemsSource = _mitglieder;
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Mitglieder selecedMitglied = lbxMitglieder.SelectedItem as Mitglieder;
+            if (selecedMitglied == null)
+            {
+                MessageBox.Show("Sie müssen eine Mitglied ausgewählt haben!");
+                return;
+            }
+
+
+
+            Repository repository = Repository.GetInstance();
+            repository.DeleteMitglieder(selecedMitglied);
+            _mitglieder = repository.GetAllMitglieder();
+            lbxMitglieder.ItemsSource = _mitglieder;
+        }
+
+        private void BtnNew_Click(object sender, RoutedEventArgs e)
+        {
+            MitgliederWindow cdWindow = new MitgliederWindow(null);
+            cdWindow.ShowDialog();
+
+            Repository repository = Repository.GetInstance();
+            _mitglieder = repository.GetAllMitglieder();
+            lbxMitglieder.ItemsSource = _mitglieder;
         }
     }
 }

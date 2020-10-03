@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Vereinsverwaltung"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="805" MinWidth="392" MinHeight="180" x:Name="wndMain">
+        Title="MainWindow" Height="400" Width="1007" MinWidth="392" MinHeight="180" x:Name="wndMain">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -13,7 +13,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Margin="0,10,0,20">Vereinsverwaltung</TextBlock>
+        <TextBlock Grid.Row="0" Margin="0,10,0,20">Vereinsverwaltung Segelfliegen</TextBlock>
 
         <ListView Grid.Row="1" x:Name="lbxMitglieder">
             <ListView.View>
@@ -22,6 +22,8 @@
                     <GridViewColumn Header="Nachname" Width="200" DisplayMemberBinding="{Binding Path=Lastname}" />
                     <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Path=Full_Name}" />
                     <GridViewColumn Header="Geburtsdatum" Width="200" DisplayMemberBinding="{Binding Path=Birthdate}" />
+                    <GridViewColumn Header="Abzeichen" Width="200" DisplayMemberBinding="{Binding Path=AchievementBadge}" />
+
 
                 </GridView>
             </ListView.View>
